@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    app:cardCornerRadius="10dp">
+
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_HolderRow"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewholder_selectedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_pickedDate " />
+
+            <TextView
+                android:id="@+id/textView_selectedDate_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/holder_empty"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+        android:id="@+id/dialogWorkPlace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LinearLayout_HolderRow"
+        android:layout_marginTop="15dp"
+        app:hasClearButton="true"
+        app:iconSignifier="@drawable/icon_pin"
+        app:labelText="WorkPlace"
+        app:primaryColor="@color/primary">
+
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+
+    <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+        android:id="@+id/dialogWorkHoursThatDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialogWorkPlace"
+        android:layout_marginTop="10dp"
+        app:hasClearButton="true"
+        app:iconSignifier="@drawable/icon_time"
+        app:labelText="Work Hours that Day">
+
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+
+</RelativeLayout>
