@@ -12,7 +12,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Hours.class}, version = 6, exportSchema = false)
+@Database(entities = {Hours.class}, version = 5, exportSchema = false)
 public abstract class HoursDB extends RoomDatabase {
 
     public abstract HoursDao HoursDao();
@@ -33,7 +33,7 @@ public abstract class HoursDB extends RoomDatabase {
         return INSTANCE;
     }
 
-    //populate database
+//populate database
     private static RoomDatabase.Callback mPopulateDataBase = new RoomDatabase.Callback() {
         @Override
         public void onOpen(@NonNull SupportSQLiteDatabase db) {

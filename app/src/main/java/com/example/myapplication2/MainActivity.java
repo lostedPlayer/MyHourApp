@@ -300,38 +300,49 @@ public class MainActivity extends AppCompatActivity {
     //set data to text fields
     void getDataFromDBForSpecificDate(int yearRaw, int monthRaw, int dayRaw) {
 
-        for (int i = 0; i < mData.size(); i++) {
-            Hours curentHour = mData.get(i);
-            Integer y = curentHour.getYear();
-            Integer m = curentHour.getMonth();
-            Integer d = curentHour.getDay();
+        //check if there is any data in DataBase
+        //if no data show add button to user
+
+        if (mData.size() > 0) {
+            for (int i = 0; i < mData.size(); i++) {
+                Hours curentHour = mData.get(i);
+                Integer y = curentHour.getYear();
+                Integer m = curentHour.getMonth();
+                Integer d = curentHour.getDay();
 
 
-            Integer year = new Integer(yearRaw);
-            Integer month = new Integer(monthRaw);
-            Integer day = new Integer(dayRaw);
+                Integer year = new Integer(yearRaw);
+                Integer month = new Integer(monthRaw);
+                Integer day = new Integer(dayRaw);
 
 
-            if (y.equals(yearRaw) & m.equals(monthRaw) & d.equals(dayRaw)) {
-                Log.d(TAG, "setDataToTextFields: " + y + "/" + m + "/" + d);
-                double hourForThatDate = curentHour.getHours();
-                String workPlaceName = curentHour.getWorkPlace();
-                String date = day + "." + month + "." + year;
+                if (y.equals(yearRaw) & m.equals(monthRaw) & d.equals(dayRaw)) {
+                    Log.d(TAG, "setDataToTextFields: " + y + "/" + m + "/" + d);
+                    double hourForThatDate = curentHour.getHours();
+                    String workPlaceName = curentHour.getWorkPlace();
+                    String date = day + "." + month + "." + year;
 
-                setDataToTextFields(date, workPlaceName, Double.toString(hourForThatDate));
-                button_addEditData.setVisibility(View.INVISIBLE);
-                button_deleteData.setVisibility(View.VISIBLE);
+                    setDataToTextFields(date, workPlaceName, Double.toString(hourForThatDate));
+                    button_addEditData.setVisibility(View.INVISIBLE);
+                    button_deleteData.setVisibility(View.VISIBLE);
 
 
-                break;
+                    break;
 
-            } else {
-                Log.d(TAG, "err");
-                button_addEditData.setVisibility(View.VISIBLE);
-                button_deleteData.setVisibility(View.INVISIBLE);
-                setDataToTextFields(Integer.toString(dayRaw) + "." + Integer.toString(monthRaw) + "." + Integer.toString(yearRaw), holder_empty, holder_empty);
+                } else {
+                    Log.d(TAG, "err");
+                    button_addEditData.setVisibility(View.VISIBLE);
+                    button_deleteData.setVisibility(View.INVISIBLE);
+                    setDataToTextFields(Integer.toString(dayRaw) + "." + Integer.toString(monthRaw) + "." + Integer.toString(yearRaw), holder_empty, holder_empty);
+                }
+
             }
+        } else {
 
+            //If no data for selected date show add button to user
+            button_addEditData.setVisibility(View.VISIBLE);
+            button_deleteData.setVisibility(View.INVISIBLE);
+            setDataToTextFields(Integer.toString(dayRaw) + "." + Integer.toString(monthRaw) + "." + Integer.toString(yearRaw), holder_empty, holder_empty);
         }
 
     }

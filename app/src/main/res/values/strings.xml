@@ -9,12 +9,12 @@
 
     <string name="textView_pickedDate">Selected Date: </string>
     <string name="textView_WorkedHoursThatDay">Worked hours that day: </string>
-    <string name="textView_WorkPlace">Work place: </string>
+    <string name="textView_WorkPlace">Project Name </string>
     <string name="textView_HoursTogetherThatMonth">Worked Hours this month: </string>
     <string name="textView_payCheck">Salary: </string>
 
     //add data dialog textViews
     <string name="dialog_addDataButton">Add</string>
-    <string name="dialog_dismissButton">cancel</string>
+    <string name="dialog_dismissButton">Cancel</string>
 
 </resources>

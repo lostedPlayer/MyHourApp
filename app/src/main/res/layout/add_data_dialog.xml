@@ -8,30 +8,24 @@
 
 
     <LinearLayout
-        android:id="@+id/LinearLayout_HolderRow"
+        android:id="@+id/LinearLayout_SelectedDate"
         android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textViewholder_selectedDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="@string/textView_pickedDate" />
 
-            <TextView
-                android:id="@+id/textViewholder_selectedDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/textView_pickedDate " />
-
-            <TextView
-                android:id="@+id/textView_selectedDate_dialog"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/holder_empty"
-                android:textStyle="bold" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/textView_selectedDate_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/holder_empty"
+            android:textStyle="bold" />
     </LinearLayout>
 
 
@@ -39,11 +33,11 @@
         android:id="@+id/dialogWorkPlace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/LinearLayout_HolderRow"
+        android:layout_below="@id/LinearLayout_SelectedDate"
         android:layout_marginTop="15dp"
         app:hasClearButton="true"
         app:iconSignifier="@drawable/icon_pin"
-        app:labelText="WorkPlace"
+        app:labelText="@string/textView_WorkPlace"
         app:primaryColor="@color/primary">
 
 
@@ -63,7 +57,7 @@
         android:layout_marginTop="10dp"
         app:hasClearButton="true"
         app:iconSignifier="@drawable/icon_time"
-        app:labelText="Work Hours that Day">
+        app:labelText="@string/textView_WorkedHoursThatDay">
 
 
         <studio.carbonylgroup.textfieldboxes.ExtendedEditText
